@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoogleLoginFrontEnd2</title>
+  <script>
+    function init(){
+      console.log('init');
+      gapi.load('auth2', function() {
+        console.log('auth2');
+        var gauth = gapi.auth2.init({
+          client_id:"344790492357-3iv5lesjklds446a5q3ufddftg73dgei.apps.googleusercontent.com"
+        })
+        gauth.then(function(){
+          console.log('googleAuth success');
+        }, function(){
+          console.log('googleAuth fail');
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <a href="index.html">GoogleLoginFrontEnd2</a>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+</body>
+</html>
